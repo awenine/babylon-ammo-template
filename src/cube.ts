@@ -2,7 +2,7 @@ import { Mesh, MeshBuilder, PhysicsImpostor, Vector3 } from "babylonjs";
 import { scene } from "./scene";
 
 export function createCube(): Mesh {
-  const size = 0.5;
+  const size = 0.3;
   const cube = MeshBuilder.CreateBox(
     "cube",
     {
