@@ -1,18 +1,16 @@
 import {
-  Engine,
   Vector3,
   Color4,
   HemisphericLight,
   Scene,
   ArcRotateCamera,
 } from "babylonjs";
-import { canvas } from "./domItems";
+import { canvas } from "../../domItems";
+import { engine } from "../../engine";
 
-export const engine = new Engine(canvas, true);
+export const gravityScene = makeGravityScene();
 
-export const scene = makeScene();
-
-function makeScene(): Scene {
+function makeGravityScene(): Scene {
   const scene = new Scene(engine);
   createCamera(scene);
   createLight(scene);
@@ -20,6 +18,7 @@ function makeScene(): Scene {
   return scene;
 }
 
+//TODO extract to util
 function createCamera(scene: Scene): void {
   //TODO - look at different cameras and how to control them
   const alpha = Math.PI / 4;
@@ -37,10 +36,12 @@ function createCamera(scene: Scene): void {
   ).attachControl(canvas, true);
 }
 
+//TODO extract to util
 function createLight(scene: Scene): void {
   new HemisphericLight("light", new Vector3(1, 1, 0), scene);
 }
 
+//TODO extract to util
 function createBackground(scene: Scene): void {
   scene.clearColor = Color4.FromHexString("#23147a");
 }

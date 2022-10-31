@@ -6,7 +6,7 @@ import {
   PhysicsImpostorParameters,
   Vector3,
 } from "babylonjs";
-import { scene } from "./scene";
+import { gravityScene } from "./gravityScene";
 
 /*
 Purpose
@@ -34,7 +34,7 @@ export function createPhysicsMesh(
     mesh,
     collisionMeshType,
     physicalProperties,
-    scene
+    gravityScene
   );
 
   return mesh;

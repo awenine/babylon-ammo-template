@@ -1,5 +1,5 @@
 import { Mesh, MeshBuilder, PhysicsImpostor } from "babylonjs";
-import { scene } from "./scene";
+import { gravityScene } from "./gravityScene";
 
 export function createGround(): Mesh {
   const size = 4;
@@ -7,9 +7,9 @@ export function createGround(): Mesh {
     "ground",
     {
       width: size,
-      height:size
+      height: size,
     },
-    scene
+    gravityScene
   );
 
   ground.physicsImpostor = new PhysicsImpostor(
@@ -17,9 +17,9 @@ export function createGround(): Mesh {
     PhysicsImpostor.BoxImpostor,
     {
       mass: 0,
-      restitution: 0.9
+      restitution: 0.9,
     },
-    scene
+    gravityScene
   );
 
   return ground;

@@ -1,9 +1,9 @@
 import { Mesh } from "babylonjs";
-import { scene } from "./scene";
+import { gravityScene } from "./gravityScene";
 
 export function createMeshScene(meshes: any[]): void {
   meshes.forEach((mesh) => {
-    Mesh.Parse(mesh, scene, mesh.name);
+    Mesh.Parse(mesh, gravityScene, mesh.name);
   });
 }
 

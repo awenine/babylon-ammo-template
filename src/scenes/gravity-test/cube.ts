@@ -1,5 +1,5 @@
 import { Mesh, MeshBuilder, PhysicsImpostor, Vector3 } from "babylonjs";
-import { scene } from "./scene";
+import { scene } from "./gravityScene";
 
 export function createCube(): Mesh {
   const size = 0.3;
